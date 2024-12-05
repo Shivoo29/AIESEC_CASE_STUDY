@@ -121,3 +121,8 @@ Dynamic Researchers Uniting for Great Solutions
 
 ---
 # Made with 💚 by Team Dynamic Researchers Uniting for Great Solutions (DRUGS)
+## Team Members
+-Shivam Kumar Jha
+-Ashish Negi
+-Vaibhav Jain
+-Ahaann Wadhwa
