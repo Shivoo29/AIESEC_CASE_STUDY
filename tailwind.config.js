@@ -4,14 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        neon: {
-          red: '#FF2B2B',
-          magenta: '#FF00FF',
-          cyan: '#00CED1',
-          green: '#ADFF2F',
-        },
+        'neon-red': '#FF2B2B',
+        'neon-magenta': '#FF00FF',
+        'neon-cyan': '#00CED1', 
+        'neon-green': '#ADFF2F',
+        'neon-yellow': '#FFFF00',
+        'neon-purple': '#9D00FF'
       },
     },
   },
   plugins: [],
-};
+ };

@@ -1,7 +1,8 @@
 // src/pages/FeaturesPage.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Zap, LineChart, Shield, Cloud, Share2 } from 'lucide-react';
+import ConstructionPage from './ConstructionPage';
 
 const features = [
  {
@@ -12,7 +13,7 @@ const features = [
  },
  {
    icon: Zap,
-   title: "Real-Time Processing",
+   title: "Real-Time Processing", 
    description: "Sub-100ms response time with high-accuracy signal detection and interpretation",
    color: "text-neon-cyan"
  },
@@ -43,6 +44,9 @@ const features = [
 ];
 
 export default function FeaturesPage() {
+ const [showConstruction, setShowConstruction] = useState(false);
+ const [showExploreConstruction, setShowExploreConstruction] = useState(false);
+
  return (
    <div className="min-h-screen bg-gray-900 py-24">
      <div className="container mx-auto px-6">
@@ -79,7 +83,10 @@ export default function FeaturesPage() {
                whileHover={{ scale: 1.05 }}
                className="mt-4"
              >
-               <button className={`px-4 py-2 rounded-full bg-gray-700/50 ${feature.color} text-sm`}>
+               <button 
+                 onClick={() => setShowConstruction(true)}
+                 className={`px-4 py-2 rounded-full bg-gray-700/50 ${feature.color} text-sm`}
+               >
                  Learn More
                </button>
              </motion.div>
@@ -93,11 +100,33 @@ export default function FeaturesPage() {
          transition={{ delay: 0.8 }}
          className="mt-16 text-center"
        >
-         <button className="px-8 py-4 rounded-full bg-neon-magenta/20 text-neon-magenta border border-neon-magenta hover:bg-neon-magenta/30 transition-colors">
+         <button 
+           onClick={() => setShowExploreConstruction(true)}
+           className="px-8 py-4 rounded-full bg-neon-magenta/20 text-neon-magenta border border-neon-magenta hover:bg-neon-magenta/30 transition-colors"
+         >
            Explore All Features
          </button>
        </motion.div>
      </div>
+
+     {/* Construction Page Modals */}
+     {showConstruction && (
+       <div 
+         className="fixed inset-0 z-50" 
+         onClick={() => setShowConstruction(false)}
+       >
+         <ConstructionPage />
+       </div>
+     )}
+
+     {showExploreConstruction && (
+       <div 
+         className="fixed inset-0 z-50" 
+         onClick={() => setShowExploreConstruction(false)}
+       >
+         <ConstructionPage />
+       </div>
+     )}
    </div>
  );
 }
