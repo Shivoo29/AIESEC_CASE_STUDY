@@ -117,7 +117,7 @@ Dynamic Researchers Uniting for Great Solutions
 
 - AIESEC-IITD
 - MAIT
-- EDC
+- EDC(Entrepreneurship Development Cell)
 
 ---
 # Made with 💚 by Team Dynamic Researchers Uniting for Great Solutions (DRUGS)
