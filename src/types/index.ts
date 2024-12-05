@@ -2,6 +2,7 @@ export interface Feature {
   title: string;
   description: string;
   icon: string;
+  benefits: string[];
 }
 
 export interface Product {
