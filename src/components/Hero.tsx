@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Waves } from 'lucide-react';
+import VideoPopup from './VideoPopup';
 
 export default function Hero() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
       <div className="absolute inset-0 z-0">
@@ -40,6 +43,7 @@ export default function Hero() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => setIsVideoOpen(true)}
             className="px-8 py-4 text-lg font-semibold rounded-full bg-[#FF2B2B] text-white shadow-[0_0_15px_rgba(255,43,43,0.5)] hover:shadow-[0_0_30px_rgba(255,43,43,0.8)] transition-shadow"
           >
             Discover the Technology
@@ -48,6 +52,12 @@ export default function Hero() {
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-900 to-transparent" />
+
+      <VideoPopup
+        isOpen={isVideoOpen}
+        onClose={() => setIsVideoOpen(false)}
+        videoId={import.meta.env.VITE_YOUTUBE_VIDEO_ID || "dQw4w9WgXcQ"}
+      />
     </section>
   );
 }
